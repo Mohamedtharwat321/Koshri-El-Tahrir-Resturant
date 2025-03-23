@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+
+html {
+    font-family: "Alexandria", sans-serif;
+}
+
+
+
+@theme {
+    --color-p1: #166534;
+    --color-p2: #2b9249;
+    --color-p3: #2f7c57;
+}
+
+@layer utilities {
+    .reusable-padding {
+        @apply px-3 sm:px-4 md:px-8 lg:px-14;
+    }
+
+    .active {
+        @apply bg-p1 text-white
+    }
+
+}

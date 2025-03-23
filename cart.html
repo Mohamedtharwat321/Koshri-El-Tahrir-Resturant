@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cart</title>
+    <link rel="icon" href="images/favicon-32x32.png" type="image/png">
+    <link rel="stylesheet" href="/src/output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alexandria:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="cart.js" defer></script>
+  </head>
+  <body class="text-white text-sm sm:text-base h-full bg-[#37911e]">
+    <header
+      class="flex items-center justify-between sm:px-4 md:px-8 lg:px-14 pb-2"
+    >
+      <a href="index.html">
+        <img
+          class="w-20 sm:w-28 md:w-40 cursor-pointer"
+          src="images/logo-removebg-preview.png"
+          alt="logo"
+        />
+      </a>
+      <input type="checkbox" class="peer hidden" id="navbar-open" />
+
+      <ul
+        class="lg:flex-row lg:static md:gap-8 lg:py-0 lg:bg-transparent lg:text-white peer-checked:opacity-100 opacity-0 lg:opacity-100 absolute top-[90px] left-[15px] right-[15px] bg-p1 rounded-lg flex flex-col items-center gap-3 py-3 transition-all duration-200"
+      >
+        <li>
+          <a
+            class="lg:hover:text-p1 hover:underline hover:underline-offset-8"
+            href="index.html"
+            >الرئيسية</a
+          >
+        </li>
+        <li>
+          <a
+            class="lg:hover:text-p1 hover:underline hover:underline-offset-8"
+            href="menu.html"
+            >المنيو</a
+          >
+        </li>
+        <li>
+          <a
+            class="lg:hover:text-p1 hover:underline hover:underline-offset-8"
+            href="about.html"
+            >عن كشري التحرير</a
+          >
+        </li>
+        <li>
+          <a
+            class="lg:hover:text-p1 hover:underline hover:underline-offset-8"
+            href="contact.html"
+            >اتصل بنا</a
+          >
+        </li>
+      </ul>
+
+      <div class="flex gap-2 items-center">
+        <a
+          href="menu.html"
+          class="bg-p1 py-2.5 px-3 sm:px-6 rounded-full cursor-pointer hover:bg-p3 text-[13px] sm:text-base"
+        >
+          اطلب الان
+        </a>
+        <div class="relative">
+          <a
+            href="cart.html"
+            class="cursor-pointer hover:text-p1 text-[13px] sm:text-base"
+          >
+            سلة المشتريات
+            <i class="fa-solid fa-cart-shopping"></i>
+          </a>
+          <small
+            id="cartCount"
+            class="rounded-full bg-p1 text-white text-xs py-1 px-1.5 font-bold absolute -top-[18px] left-[6px]"
+            >0</small
+          >
+        </div>
+        <label for="navbar-open" class="cursor-pointer lg:hidden">
+          <i class="fa-solid fa-bars text-[22px] pl-2.5"></i>
+        </label>
+      </div>
+    </header>
+    <main>
+      <section class="reusable-padding pb-12">
+        <div class="text-center">
+          <h2
+            class="text-[24px] sm:text-4xl text-p1 bg-white inline-block rounded-full px-6 py-4 font-semibold mb-10"
+          >
+            سلة المشتريات
+          </h2>
+          <h3 class="text-3xl font-bold mt-24" id="title"></h3>
+        </div>
+
+        <div class="flex flex-col lg:flex-row gap-6" id="cart-container">
+          <div
+            id="cart-product-wrapper"
+            class="order-2 lg:order-1 lg:w-[40%]"
+          ></div>
+
+          <div class="lg:w-[60%] py-12 px-2 bg-p1 rounded-md order-1 h-fit">
+            <h3 class="text-center text-4xl font-bold mb-6">الفاتورة الكلية</h3>
+
+            <div class="flex sm:justify-around justify-between">
+              <div
+                class="text-center flex flex-col gap-3 w-[180px] sm:w-[325px]"
+              >
+                <p class="font-semibold bg-p2 py-1.5 rounded-md">المشتريات</p>
+                <ul id="receipe-products" class="flex flex-col gap-3"></ul>
+                <p class="font-bold border-t-1 border-white pt-4">الاجمالي</p>
+              </div>
+              <!-- 
+             -->
+              <div
+                class="text-center flex flex-col gap-3 w-[75px] sm:w-[200px]"
+              >
+                <p class="font-semibold bg-p2 py-1.5 rounded-md">السعر</p>
+                <div id="receipe-prices" class="flex flex-col gap-3"></div>
+                <span
+                  id="total-price"
+                  class="font-bold border-t-1 border-white pt-4"
+                  >775 ج.م</span
+                >
+              </div>
+            </div>
+
+            <div class="text-center mt-8">
+              <button
+                class="bg-p2 text-white py-2 px-12 rounded-full cursor-pointer hover:bg-white hover:text-p2 transition-all duration-300"
+              >
+                تأكيد الطلب
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
