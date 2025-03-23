@@ -1,5 +1,5 @@
 <h1 align="center"> ⭐️ Koshri-El-Tahrir-Resturant ⭐️ </h1> <br>
- <h3 algin="center"> Live Demo: https://mohamedtharwat321.github.io/InteriorDesign-Landing-Page/ </h3> <br>
+ <h3 algin="center"> Live Demo: https://mohamedtharwat321.github.io/Koshri-El-Tahrir-Resturant/ </h3> <br>
 
 
 ![Image](https://github.com/user-attachments/assets/c11a1a46-f2aa-47dc-a582-928e2cb2ba48)
